@@ -1,0 +1,141 @@
+body {
+    background-color: rgb(0, 34, 0);
+    background-image: url(Pics/path.jpg);
+    background-attachment:fixed;
+    background-position-x: 56.5%;
+    background-position-y: bottom;
+}
+
+.audiooptions {
+    background-color: rgba(0, 128, 0, 0.33);
+    width: auto;
+    height: auto;
+    position: fixed;
+    top: 10px;
+    padding: 5px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+}
+
+#volslider {
+    display: none;
+    margin-left: 20px;
+}
+
+#closeloader {
+    display:none;
+    color: rgb(0, 128, 0);
+    position: fixed;
+    top: 75%;
+}
+
+.loader {
+    display: none;
+    color: rgb(208, 255, 208);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#start {
+    color: rgb(0, 128, 0);
+}
+
+.section1 img:hover {
+    transform: scale(1.05);
+    transition: .5s ease;
+    opacity: 0.95;
+    border-radius: 10px 10px 0px 0px ;
+}
+
+.section1 {
+    background:  linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.35));
+    margin: auto;
+    max-width: 55%;
+    padding: 20px 50px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border-radius: 0px 0px 6px 6px;
+    transform: scaleX(1);
+    transition: .3s ease;
+}
+
+.section1:hover {
+    transform: scale(1.05);
+    transition: .3s ease;
+}
+
+.section1 img {
+    /*padding = Innenrand*/
+    /*margin = Außenrand*/
+    display: block;
+    margin: auto;
+    max-height: 200px;
+    max-width: 100%;
+    opacity: 0.85;
+    transform: scaleZ(0.95);
+    transition: .3s ease;
+}
+
+.section1 h6:hover, h2:hover {
+    transform: scale(1.05);
+    font-weight: 900;
+    text-decoration: underline;
+    transition: .3s ease;
+}
+
+.section1 h6 {
+    margin: 10px 0px 0px 0px;
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+    color: rgb(0, 55, 0);
+    transition: .3s ease;
+}
+
+.section1 h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 42px;
+    font-weight: 500;
+    color: rgb(0, 148, 0);
+    text-align: center;
+    transition: .3s ease;
+}
+
+.section1 p:hover {
+    overflow: visible;
+    height: 100%;
+    width: 100%;
+    text-align: justify;
+    white-space: pre-line;
+    transition: .3s ease;
+    background: linear-gradient(rgb(1, 76, 1), rgb(0, 20, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section1 p {
+    font-weight: 100;
+    margin: 0px;
+    color: rgb(1, 56, 1);
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    width: 90%;
+    transition: .3s ease;
+}
+
+.remXlink {
+    position: fixed;
+    color: white;
+    right: 20px;
+    bottom: 20px;
+}

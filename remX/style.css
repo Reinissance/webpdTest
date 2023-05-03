@@ -1,0 +1,201 @@
+body {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("./Pics/whole.jpg");
+    background-position-x: center;
+    background-position-y: 50%;
+    background-attachment: fixed;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center; 
+}
+
+.head {
+    padding: 5px;
+    width: auto;
+    height: auto;
+    max-height: 15vh;
+    min-height: 50px;
+    display: flex;
+    align-items: center;   
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0, 0, 0, 0.197));
+}
+
+.head p {
+    margin: 0px 30px;
+    padding: 0px;
+    color: rgba(255, 255, 255, 0.796);
+    font-weight: 900;
+    height: inherit;
+    /* font-size: min(4vh, 4vw); */
+}
+
+.head img {
+    margin: 5px;
+    max-width: inherit;
+    max-height: inherit;
+    min-height: inherit;
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+}
+
+.barItems {
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+
+.middleHead {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: inherit;
+    max-height: inherit;
+    height: inherit;
+    width: 100%;
+    padding: 5px;
+}
+
+li {
+    /* font-size: min(2vh, 2vw); */
+    width: 90%;
+    padding: 5px;
+    margin: 5px;
+    background:linear-gradient(rgba(255, 255, 255, 0.154), rgba(0,0,0,0.5));
+    transition: 0.3s ease;
+    border-radius: 3px 3px 3px 3px;
+    color: rgba(255, 255, 255, 0.731);
+}
+
+li:hover {
+    height: 90%;
+    scale: 1.1;
+    background:linear-gradient(rgba(0, 0, 0, 0.387), rgba(255, 255, 255, 0.334));
+    transition: 0.3s ease;
+    color: rgba(0, 0, 0, 0.738);
+}
+
+ul {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.796);
+    display: block;
+    width: 100%;
+}
+
+.footContent {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.507), rgba(255, 255, 255, 0.477));
+    bottom: 10px;
+}
+
+.bottom {
+    padding: 15px;
+    width: 100%;
+    height : 10vh;
+    min-height: 40px;
+    left: 0px;
+    bottom: 0px;
+    /* position: fixed; */
+    box-sizing: border-box;
+}
+
+.styled {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.679));
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-65px);
+    border-radius: 6px;
+}
+
+/*impressum hidden*/
+.hidden {
+    height:0px;
+    overflow: hidden;
+}
+
+
+.audiooptions {
+    background-color: rgba(128, 0, 0, 0.33);
+    width: auto;
+    height: auto;
+    /* position: fixed; */
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+}
+
+#volslider {
+    display: none;
+    margin-left: 20px;
+}
+
+#closeloader {
+    display:none;
+    color: rgb(128, 0, 0);
+    position: fixed;
+    top: 75%;
+}
+
+.loader {
+    display: none;
+    color: rgb(255, 208, 208);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#start {
+    color: rgb(128, 0, 0);
+}
+
+#playButton {
+    margin: 20px 0px 0px 0px;
+}
+
+
+.sliderSection {
+    width: 60vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px 0px 20vw;
+    gap: 1.5vw;
+}
+
+
+.mainContainer {
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+main {
+    min-height: 70vh;
+}
+
+@media (max-width:500px) {
+    
+}

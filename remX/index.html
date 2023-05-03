@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remX</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/guiScript.js"></script>
+</head>
+<body>
+    <header class="head">
+        <img src="./Pics/logo.png" alt="">
+        <section class="middleHead">
+            <p>let's remX the intro of micle's billy jean!</p>
+            <a>or chose another file here:</a>
+            <ul class="navItems">
+                <li onclick="loadFile('n_0_12')">Billy Jean</li>
+                <li onclick="loadFile('n_0_11')">808</li>
+                <li onclick="loadFile('n_0_13')">Four Bar</li>
+            </ul>
+        </section>
+        <div class="audiooptions" id="audioOpts" title="wanna hear some sounds?">
+            <button id="start" onclick="startButtonClicked()">allow sound</button>
+            <input type="range" name="volume" id="volslider" max="100">
+        </div>
+    </header>
+    <main class="mainContent">
+        <section class="mainContainer">
+            <button id="playButton" onclick="play()">Play</button>
+            <p>The Intro has five bars, and here you can chose, which one to play.</p>
+            <ul class="barItems">
+                <li onclick="setBar('n_0_3')">first Bar</li>
+                <li onclick="setBar('n_0_4')">second Bar</li>
+                <li onclick="setBar('n_0_14')">third Bar</li>
+                <li onclick="setBar('n_0_5')">fourth Bar</li>
+                <li onclick="setBar('n_0_6')" id="lastBar">fifth Bar</li>
+            </ul>
+            <section class="sliderSection">
+                <p>With this slider you can set how much the order of the eight positions are randomized during playback in percent:</p>
+                <input type="range" id="randPos" max="100" class="isliders" name="n_0_8">
+                <p>With this slider you can adjust how many of the eighths positions are taken from another bar than the above set in percent:</p>
+                <input type="range" id="randBar" max="100" class="isliders" name="n_0_7">
+                <p>With this slider you set, how often a sixteen will be added inbetween of two eighths (in percent)</p>
+                <input type="range" id="addSixteens" max="100" class="isliders" name="n_0_10">
+                <p>With this slider you set the shuffling of the added sixteens (0% = normal sixteens, 100% = triplet)</p>
+                <input type="range" id="shuffleSixteens" max="100" class="isliders" name="n_0_9">
+            </section>
+        </section>
+        <div id="loading" class="loader">
+            <h2 id="loadtext" class="loader">please allow this site playing sound for you ...<br><br>...it won't track any audio in any way.</h2>
+            <button id="closeloader">OK (though sad)</button>
+        </div>
+    </main>
+    <footer class="bottom">
+        <section class="footContent">
+            <ul>
+                <li onmouseover="showFootListItems('#hiddenImp')" onmouseout="showFootListItems('#hiddenImp')">
+                    <section id="hiddenImp" class="hidden styled" >
+                        <a>This Impressum is meant to impress you with it's style.</a>
+                        <a>A real impressum for this site would have been created for example on <a href="https://jurarat.de/muster-impressum">this page</a>.</a>
+                    </section>
+                    <a>Impressum</a>
+                </li>
+                <li onmouseover="showFootListItems('#hiddenC')" onmouseout="showFootListItems('#hiddenC')">
+                    <section id="hiddenC" class="hidden styled">
+                        <a href="mailto:reinissance@gmail.com">You can write an e-Mail to me.</a>
+                        <a>Or visit me: I'm on the dark side of the moon...</a>
+                    </section>
+                    <a>Kontakt</a>
+                </li>
+                <li onmouseover="showFootListItems('#hiddenPP')" onmouseout="showFootListItems('#hiddenPP')">
+                    <section id="hiddenPP" class="hidden styled">
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=PS9EF8SB6JSMQ">I'd appriciate if you did...</a>
+                        <div id="donate-button-container">
+                            <div id="donate-button"></div>
+                            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                            <script>
+                            PayPal.Donation.Button({
+                            env:'production',
+                            hosted_button_id:'5S33QU6CBB262',
+                            image: {
+                            src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                            alt:'Donate with PayPal button',
+                            title:'PayPal - The safer, easier way to pay online!',
+                            }
+                            }).render('#donate-button');
+                            </script>
+                            </div>
+                            
+                    </section>
+                    <a>Buy me a coffe</a>
+                </li>
+            </ul>
+        </section>
+    </footer>
+    <script src="./../js/webpd-runtime.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

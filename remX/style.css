@@ -69,7 +69,7 @@ li {
     transition: 0.3s ease;
     border-radius: 3px 3px 3px 3px;
     color: rgba(255, 255, 255, 0.731);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.765), 0 6px 20px 0 rgba(151, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.328), 0 6px 20px 0 rgba(151, 0, 0, 0.113);
 }
 
 li:hover {
@@ -121,10 +121,11 @@ a {
     flex-direction: column;
     justify-content: space-around;
     height: 90px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.679));
+    background-image: linear-gradient(rgba(180, 134, 134, 0.773), rgba(0, 0, 0, 0.679));
     transition: all 0.3s ease-in-out;
     transform: translateY(-65px);
     border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.765), 0 6px 20px 0 rgba(151, 0, 0, 0.492);
 }
 
 /*impressum hidden*/
@@ -139,8 +140,6 @@ a {
     width: auto;
     height: auto;
     /* position: fixed; */
-    top: 10px;
-    right: 10px;
     padding: 5px;
     border-radius: 6px;
     display: flex;
@@ -199,7 +198,7 @@ a {
 
 .isliders {
     margin-top: -2.5vh;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.765), 0 6px 20px 0 rgba(151, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.515), 0 6px 20px 0 rgba(151, 0, 0, 0.115);
 }
 
 
@@ -212,7 +211,7 @@ a {
 main {
     min-height: 70vh;
 }
-
-@media (max-width:500px) {
+/* for screens */
+/* @media (max-width:500px) {
     
-}
+} */

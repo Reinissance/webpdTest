@@ -50,6 +50,7 @@ let stream = null
         const startPlay = document.querySelector('#playButton')
         const inputSliders = document.querySelectorAll('.isliders')
         const lastBar = document.querySelector('#lastBar')
+        const barText = document.querySelector('#barText')
 
         const loadingDiv = document.querySelector('#loading')
         const loadPrompt = document.querySelector('#loadtext')
@@ -123,6 +124,7 @@ let stream = null
                  else {
                     audioContext.suspend();
                     startButton.textContent = 'allow sound'
+                    volumeSlider.style.display = 'none'
                     resumed = false
                  }
             }
@@ -163,6 +165,7 @@ let stream = null
                     let svalue = Number(this.value)
                     sendMsgToWebPd(this.name, '0', [svalue])
                 }
+                else soundNotActive()
             })
         })
 
@@ -172,18 +175,39 @@ let stream = null
                 sendMsgToWebPd('n_0_1', '0', (startPlay.textContent == 'Play') ? [1] : [0])
                 startPlay.textContent = (startPlay.textContent == 'Play') ? 'Stop' : 'Play';
             }
+            else soundNotActive()
         }
 
         function loadFile(name) {
             if (loaded & resumed) {
                 console.log(name)
+                barText.textContent = (name == 'n_0_12') ? "The Intro of Micle's Billy Jean has five bars, the second is chosen to be the main bar." : (name == 'n_0_11') ? "This file also has 5 bars, the last one is selected to be the main bar." : "This file has only 4 bars, the last one is selected to be the main bar."
                 sendMsgToWebPd(name, '0', ['bang'])
                     lastBar.style.display = (name == 'n_0_13') ?  'none' : 'block'
             }
+            else soundNotActive()
         }
 
         function setBar(bar) {
             if (loaded & resumed) {
                 sendMsgToWebPd(bar, '0', ['bang'])
+            }
+            else soundNotActive()
+        }
+
+        function soundNotActive() {
+            var promt = confirm ("PLEASE ALLOW SOUND IN YOUR BROWSER FIRST...\n(click the button in the upper right corner of the page)");
+            if (promt) {
+                let start = Date.now();
+                let timer = setInterval(function() {
+                  let timePassed = Date.now() - start;
+                  let m = (timePassed < 250) ? timePassed + 5 : (500 - timePassed) + 5
+                //   audioHoverer.style.margin = m + 'px';
+                  audioHoverer.style.padding = m + 'px';
+                  if (timePassed > 500) {
+                    clearInterval(timer);
+                    audioHoverer.style.margin = 0
+                  }
+                }, 20);
             }
         }

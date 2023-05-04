@@ -28,7 +28,7 @@
     <main class="mainContent">
         <section class="mainContainer">
             <button id="playButton" onclick="play()">Play</button>
-            <p>The Intro has five bars, and here you can chose, which one to play.</p>
+            <p id="barText">The Intro of micle's Billy Jean has five bars, the second is chosen to be the main bar.</p>
             <ul class="barItems">
                 <li onclick="setBar('n_0_3')">first Bar</li>
                 <li onclick="setBar('n_0_4')">second Bar</li>
@@ -37,10 +37,10 @@
                 <li onclick="setBar('n_0_6')" id="lastBar">fifth Bar</li>
             </ul>
             <section class="sliderSection">
-                <p>With this slider you can set how much the order of the eight positions are randomized during playback in percent:</p>
-                <input type="range" id="randPos" max="100" class="isliders" name="n_0_8" value="34">
                 <p>With this slider you can adjust how many of the eighths positions are taken from another bar than the above set in percent:</p>
                 <input type="range" id="randBar" max="100" class="isliders" name="n_0_7" value="57">
+                <p>With this slider you can set how much the order of the eight positions are randomized during playback in percent:</p>
+                <input type="range" id="randPos" max="100" class="isliders" name="n_0_8" value="34">
                 <p>With this slider you set, how often a sixteen will be added inbetween of two eighths (in percent):</p>
                 <input type="range" id="addSixteens" max="100" class="isliders" name="n_0_10" value="31">
                 <p>With this slider you set the shuffling of the added sixteens (0% = normal sixteens, 100% = triplet)</p>

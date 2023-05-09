@@ -96,6 +96,11 @@ let stream = null
                     },
                 })
 
+                // iOS Safari needs this
+                if (audioContext.state === 'suspended') {
+                    audioContext.resume()
+                }
+
                 startButton.textContent = 'stop sound'
 
                 /* hide the loadingPromt */
@@ -130,7 +135,7 @@ let stream = null
             }
         }
 
-        /* interactio to pure data (send messages) */
+        /* interaction to pure data (send messages) */
         const sendMsgToWebPd = (nodeId, portletId, message) => {
             webpdNode.port.postMessage({
                 type: 'inletCaller',
@@ -179,6 +184,8 @@ let stream = null
             else soundNotActive()
         }
 
+        /* set Text on user action & send to pd*/
+
         let startText = "The Intro of Micle's Billy Jean has five bars, the "
 
         function loadFile(name) {
@@ -202,6 +209,8 @@ let stream = null
             }
             else soundNotActive()
         }
+
+        /* promt if sound not allowed */
 
         function soundNotActive() {
             var promt = confirm ("PLEASE ALLOW SOUND IN YOUR BROWSER FIRST...\n(click the button in the upper right corner of the page)");

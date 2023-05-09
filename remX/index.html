@@ -22,12 +22,12 @@
         </section>
         <div class="audiooptions" id="audioOpts" title="wanna hear some sounds?">
             <button id="start" onclick="startButtonClicked()">allow sound</button>
-            <input type="range" name="volume" id="volslider" max="100">
+            <input type="range" title="volume" name="volume" id="volslider" max="100">
         </div>
     </header>
     <main class="mainContent">
         <section class="mainContainer">
-            <button id="playButton" onclick="play()">Play</button>
+            <button id="playButton" onclick="play()" name="Play">Play</button>
             <p id="barText">The Intro of micle's Billy Jean has five bars, the second is chosen to be the main bar.</p>
             <ul class="barItems">
                 <li onclick="setBar('n_0_3')">first Bar</li>

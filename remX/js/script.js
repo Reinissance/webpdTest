@@ -8,7 +8,6 @@ let stream = null
                     const mics = devices.filter(device => {
                         return device.kind === 'audioinput'
                     })
-                    if (mics.length >= 1) console.log ('mics avail')
                 /* release stream */
                     const tracks = stream.getTracks()
                     if (tracks) {
@@ -119,6 +118,7 @@ let stream = null
                 if (startButton.textContent === 'allow sound') {
                     audioContext.resume();
                     startButton.textContent = 'stop sound'
+                    volumeSlider.style.display = 'flex'
                     resumed = true
                  }
                  else {
@@ -172,25 +172,33 @@ let stream = null
         /* functions for interaction with the pdPach*/
         function play() {
             if (loaded & resumed) {
-                sendMsgToWebPd('n_0_1', '0', (startPlay.textContent == 'Play') ? [1] : [0])
-                startPlay.textContent = (startPlay.textContent == 'Play') ? 'Stop' : 'Play';
+                startPlay.textContent = (startPlay.name == 'Play') ? 'Stop' : 'Play';
+                sendMsgToWebPd('n_0_1', '0', (startPlay.name == 'Play') ? [1] : [0])
+                startPlay.name = (startPlay.name == 'Play') ? 'Stop' : 'Play';
             }
             else soundNotActive()
         }
 
+        let startText = "The Intro of Micle's Billy Jean has five bars, the "
+
         function loadFile(name) {
             if (loaded & resumed) {
-                console.log(name)
-                barText.textContent = (name == 'n_0_12') ? "The Intro of Micle's Billy Jean has five bars, the second is chosen to be the main bar." : (name == 'n_0_11') ? "This file also has 5 bars, the last one is selected to be the main bar." : "This file has only 4 bars, the last one is selected to be the main bar."
+                startText = (name == 'n_0_12') ? "The Intro of Micle's Billy Jean has five bars, the " : (name == 'n_0_11') ? "This file also has 5 bars, the " : "This file has only 4 bars, the "
+                setBarText((name == 'n_0_12') ? 'second' : 'last one')
                 sendMsgToWebPd(name, '0', ['bang'])
                     lastBar.style.display = (name == 'n_0_13') ?  'none' : 'block'
             }
             else soundNotActive()
         }
 
+        function setBarText (bar) {
+            barText.textContent = startText + bar + " is chosen to be the main bar."
+        }
+
         function setBar(bar) {
             if (loaded & resumed) {
                 sendMsgToWebPd(bar, '0', ['bang'])
+                setBarText((bar == 'n_0_3') ? 'first' : (bar == 'n_0_4') ? 'second' : (bar == 'n_0_14') ? 'third' : (startText.split(' ').slice(0,3).join('+') != 'This+file+has' & bar == 'n_0_5') ? 'fourth' : 'last one')
             }
             else soundNotActive()
         }

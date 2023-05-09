@@ -16,7 +16,7 @@ body {
     padding: 5px;
     width: auto;
     height: auto;
-    max-height: 15vh;
+    max-height: 20vh;
     min-height: 50px;
     display: flex;
     align-items: center;   
@@ -35,12 +35,12 @@ body {
 
 .head img {
     margin: 5px;
-    max-width: inherit;
-    max-height: inherit;
+    max-width: 10vw;
+    max-height: 10vh;
     min-height: inherit;
     height: inherit;
     width: inherit;
-    object-fit: cover;
+    object-fit:fill;
 }
 
 .barItems {
@@ -211,7 +211,7 @@ a {
 main {
     min-height: 70vh;
 }
-/* for screens */
-/* @media (max-width:500px) {
+
+@media (max-width:500px) {
     
-} */
+}
